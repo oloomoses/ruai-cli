@@ -51,7 +51,7 @@ class ChatCli
                 }                
             )
         
-            assistant_reply = response.dig("choices", 0, "messages", "content")
+            assistant_reply = response.dig("choices", 0, "message", "content")
             @messages << {role: "assistant", content: assistant_reply }
             puts "\nAssistant >"
             puts TTY::Markdown.parse(assistant_reply)
